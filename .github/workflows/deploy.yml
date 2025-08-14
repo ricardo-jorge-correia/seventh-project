@@ -13,7 +13,7 @@ jobs:
         id: cache-deps-lint
         uses: ./.github/actions/cached-deps
         with:
-          caching: 'false'
+          caching: 'batatas'
       - name: Output information
         run: echo "Cache used? ${{ steps.cache-deps-lint.outputs.used-cache }}"
       - name: Lint code
@@ -27,7 +27,7 @@ jobs:
         id: cache-deps-test
         uses: ./.github/actions/cached-deps
         with:
-          caching: 'true'
+          caching: 'false'
       - name: Output information
         run: echo "Cache used? ${{ steps.cache-deps-test.outputs.used-cache }}"
       - name: Test code
