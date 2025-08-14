@@ -26,8 +26,6 @@ jobs:
       - name: Load & Cache dependencies
         id: cache-deps-test
         uses: ./.github/actions/cached-deps
-        with:
-          caching: 'true'
       - name: Output information
         run: echo "Cache used? ${{ steps.cache-deps-test.outputs.used-cache }}"
       - name: Test code
@@ -48,8 +46,6 @@ jobs:
       - name: Load & Cache dependencies
         id: cache-deps-build
         uses: ./.github/actions/cached-deps
-        with:
-          caching: 'true'
       - name: Output information
         run: echo "Cache used? ${{ steps.cache-deps-build.outputs.used-cache }}"
       - name: Build website
